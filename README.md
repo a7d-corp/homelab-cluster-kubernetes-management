@@ -1,6 +1,6 @@
-# homelab-instance-template
+# homelab-cluster-kubernetes-management
 
-Template repo for managing an instance.
+Configuration for my Kubernetes management cluster running on Proxmox.
 
 ## Managing secrets
 
