@@ -1,2 +1,2 @@
-terraform/backend-config
-terraform/.terraform*
+backend-config
+.terraform*
