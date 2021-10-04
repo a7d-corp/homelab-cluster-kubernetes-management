@@ -46,6 +46,26 @@ variable "net0_vlan_tag" {
   description = ""
 }
 
+variable "net1_network_bridge" {
+  type        = string
+  description = "Host bridge to attach the interface to."
+}
+
+variable "net1_network_cidr" {
+  type        = string
+  description = ""
+}
+
+variable "net1_network_netmask" {
+  type        = number
+  description = ""
+}
+
+variable "net1_vlan_tag" {
+  type        = number
+  description = ""
+}
+
 variable "network_model" {
   type        = string
   description = "Name of the NIC model."
@@ -85,6 +105,7 @@ variable "qemu_agent" {
 
 variable "target_node" {
   type        = string
+  default     = "hostname"
   description = ""
 }
 
