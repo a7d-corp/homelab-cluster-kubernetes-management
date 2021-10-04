@@ -57,7 +57,7 @@ module "instance_cloudinit_template" {
   }
 
   extra_networks = [{
-    ips     = [cidrhost(var.net1_network_cidr, count.index)]
+    ips     = [cidrhost(var.net1_network_cidr, count.index + local.secondary_ip_offset_master)]
     macaddr = upper(macaddress.master_net1_mac[count.index].address)
     name    = "eth1"
     netmask = var.net1_network_netmask

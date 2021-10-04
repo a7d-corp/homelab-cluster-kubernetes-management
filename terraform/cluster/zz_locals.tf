@@ -5,7 +5,8 @@ locals {
   primary_ip_gateway         = "172.25.0.1"
   primary_ip_offset_master   = 64
   primary_ip_offset_worker   = 67
-  secondary_ip_offset_worker = 3
+  secondary_ip_offset_master = 1
+  secondary_ip_offset_worker = 4
   snippet_root_dir           = "/mnt/pve/cloudinit"
   snippet_dir                = "snippets"
   vmid_base                  = 300
