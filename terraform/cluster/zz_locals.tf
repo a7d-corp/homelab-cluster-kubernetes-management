@@ -10,8 +10,9 @@ locals {
   snippet_root_dir           = "/mnt/pve/cloudinit"
   snippet_dir                = "snippets"
   vmid_base                  = 300
-  vmid_offset_master         = 0
-  vmid_offset_worker         = 3
+  vmid_offset_master         = 3
+  vmid_offset_worker         = 6
+  worker_count               = 3
 
   host_list = ["host-01", "host-02", "host-03"]
 
