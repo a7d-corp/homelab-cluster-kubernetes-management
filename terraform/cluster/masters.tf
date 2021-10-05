@@ -34,7 +34,7 @@ resource "consul_service" "consul_service_master_ssh" {
   }
 }
 
-module "instance_cloudinit_template" {
+module "master_cloudinit_template" {
   count = local.master_count
 
   source = "github.com/glitchcrab/terraform-module-proxmox-cloudinit-template"
@@ -73,11 +73,11 @@ module "instance_cloudinit_template" {
   })
 }
 
-module "instance" {
+module "master_instances" {
   count = local.master_count
 
   source     = "github.com/glitchcrab/terraform-module-proxmox-instance"
-  depends_on = [module.instance_cloudinit_template]
+  depends_on = [module.master_cloudinit_template]
 
   pve_instance_name        = "master${count.index}-${local.name_stub}.${var.instance_domain}"
   pve_instance_description = "kubernetes managment cluster master"
