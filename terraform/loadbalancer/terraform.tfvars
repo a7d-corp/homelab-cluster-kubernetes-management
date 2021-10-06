@@ -12,7 +12,7 @@ citemplate_storage      = "nfs-cloudinit"
 
 resource_cpu_cores   = 1
 resource_cpu_sockets = 1
-resource_memory      = 256
+resource_memory      = 512
 
 # network config
 network_model = "virtio"
