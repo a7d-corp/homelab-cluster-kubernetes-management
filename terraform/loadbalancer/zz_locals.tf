@@ -3,9 +3,11 @@ locals {
   lb_count           = 3
   name_stub          = "k8s-mgmt"
   primary_ip_gateway = "172.25.0.1"
-  primary_ip_offset  = 64
+  primary_ip_offset  = 65
   snippet_root_dir   = "/mnt/pve/cloudinit"
   snippet_dir        = "snippets"
+  vip_ip             = "172.25.0.64"
+  vip_port           = 443
   vmid_base          = 300
 
   host_list = ["host-01", "host-02", "host-03"]

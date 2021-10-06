@@ -30,6 +30,30 @@ resource "consul_service" "consul_service_lb_ssh" {
   }
 }
 
+resource "consul_node" "consul_node_vip" {
+  address = local.vip_ip
+  name    = "ha-lb-vip-${local.name_stub}"
+  meta = {
+    "external-node" : "true",
+    "external-probe" : "true"
+  }
+}
+
+resource "consul_service" "consul_service_vip_port" {
+  name    = "ha-lb-vip-${local.name_stub}"
+  address = local.vip_ip
+  node    = consul_node.consul_node_vip.name
+  port    = local.vip_port
+
+  check {
+    check_id = "ha-lb-vip-${local.name_stub}:${local.vip_port}"
+    name     = "TCP on port ${local.vip_port}"
+    tcp      = "${local.vip_ip}:${local.vip_port}"
+    interval = "10s"
+    timeout  = "2s"
+  }
+}
+
 module "cloudinit_template" {
   count = local.lb_count
 
