@@ -3,8 +3,8 @@ locals {
   master_count               = 3
   name_stub                  = "k8s-mgmt"
   primary_ip_gateway         = "172.25.0.1"
-  primary_ip_offset_master   = 64
-  primary_ip_offset_worker   = 67
+  primary_ip_offset_master   = 68
+  primary_ip_offset_worker   = local.primary_ip_offset_master + 3
   secondary_ip_offset_master = 1
   secondary_ip_offset_worker = 4
   snippet_root_dir           = "/mnt/pve/cloudinit"
