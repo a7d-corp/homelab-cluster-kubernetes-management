@@ -5,5 +5,6 @@ resource "local_file" "ansible_inventory" {
     machine_ips     = consul_node.consul_node_lb_dns.*.address
   })
 
-  filename = "ansible/inventory.ini"
+  filename        = "ansible/inventory.ini"
+  file_permission = "0644"
 }
