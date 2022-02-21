@@ -70,6 +70,7 @@ module "master_cloudinit_template" {
     count_id        = count.index
     name_stub       = local.name_stub
     instance_domain = var.instance_domain
+    instance_role   = "master"
   })
 }
 

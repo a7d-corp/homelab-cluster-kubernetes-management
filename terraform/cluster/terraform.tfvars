@@ -10,7 +10,7 @@ os_type                 = "cloud-init"
 cloudinit_cdrom_storage = "nfs-cloudinit"
 citemplate_storage      = "nfs-cloudinit"
 
-resource_cpu_cores   = 1
+resource_cpu_cores   = 2
 resource_cpu_sockets = 1
 resource_memory      = 3072
 
