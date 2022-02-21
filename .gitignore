@@ -1,3 +1,4 @@
 backend-config
 .terraform*
 id_deploy
+roles/
